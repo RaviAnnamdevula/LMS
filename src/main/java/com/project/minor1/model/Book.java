@@ -1,20 +1,22 @@
 package com.project.minor1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Setter
 @Getter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(length = 30)
@@ -31,4 +33,12 @@ public class Book {
     @JoinColumn
     private Student student;
 
+    @ManyToOne
+    @JoinColumn
+//    @JsonIgnore
+    @JsonIgnoreProperties("bookList")
+    private Author author;
+
+    @OneToMany(mappedBy = "book")
+    private List<Txn> txnList;
 }
