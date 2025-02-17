@@ -1,7 +1,7 @@
-# Learning Management System (LMS)
+# Library Management System (LMS)
 
 ## Overview
-This Learning Management System (LMS) is a **Spring Boot** application designed to manage books, students, and transactions efficiently. The system allows users to perform CRUD operations on books, authors, and students while handling transactions related to book borrowings and returns.
+This Library Management System (LMS) is a **Spring Boot** application designed to manage books, students, and transactions efficiently. The system allows users to perform CRUD operations on books, authors, and students while handling transactions related to book borrowings and returns.
 
 ## Features
 - **Book Management**: Add, update, delete, and fetch book details.
